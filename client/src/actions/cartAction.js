@@ -22,7 +22,10 @@ export const addToCart = (pizza, quantity, varient) => (dispatch, getState) => {
     }
   }
 };
-
+export const emptyCart = () => (dispatch) => {
+  localStorage.removeItem("cartItems");
+  dispatch({ type: "CLEAR_CART", payload: [] });
+}
 export const deleteFromCart = (pizza) => (dispatch, getState) => {
   dispatch({ type: "DELETE_FROM_CART", payload: pizza });
   const cartItems = getState().cartReducer.cartItems;

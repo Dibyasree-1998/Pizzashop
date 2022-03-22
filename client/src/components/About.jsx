@@ -5,7 +5,7 @@ const About = () => {
   return (
     <>
       <Container style={{ marginTop: "50px" }}>
-        <h1>Whoe we are</h1>
+        <h1>Who we are</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi eveniet
           unde vel dignissimos. Cum minima iste quaerat sequi, eum aspernatur

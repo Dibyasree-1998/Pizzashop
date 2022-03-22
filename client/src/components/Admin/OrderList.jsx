@@ -39,7 +39,7 @@ const OrderList = () => {
                 <td>
                   {" "}
                   {order.isDeliverd ? (
-                    <h6 className="text-success">Deliverd</h6>
+                    <h6 className="text-success">Delivered</h6>
                   ) : (
                     <>
                       <Button

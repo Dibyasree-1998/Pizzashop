@@ -2,7 +2,8 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import StripeCheckout from "react-stripe-checkout";
 import { useDispatch, useSelector } from "react-redux";
-import { placeOrder } from "../actions/orderAction";
+import { placeOrder} from "../actions/orderAction";
+import { emptyCart} from "../actions/cartAction";
 import Loader from "./Loader";
 import Error from "./Error";
 import Success from "./Success";
@@ -14,11 +15,12 @@ const Checkout = ({ subTotal }) => {
     dispatch(placeOrder(token, subTotal));
     console.log(token);
   };
+  if (success) dispatch(emptyCart());
   return (
     <>
       {loading && <Loader />}
       {error && <Error error="something went wrong" />}
-      {success && <Success success="order placed success" />}
+      {success && <Success success="order placed success" /> }
       <StripeCheckout
         amount={subTotal * 100}
         shippingAddress

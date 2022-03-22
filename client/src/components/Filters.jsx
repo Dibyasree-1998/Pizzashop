@@ -14,7 +14,7 @@ const Filters = () => {
             <Form.Control
               value={searchkey}
               onChange={(e) => setsearchkey(e.target.value)}
-              placeholder="serach pizza"
+              placeholder="search pizza"
             />
           </Col>
           <Col>
@@ -24,8 +24,8 @@ const Filters = () => {
               onChange={(e) => setcategory(e.target.value)}
             >
               <option>All</option>
-              <option>veg</option>
-              <option>nonveg</option>
+              <option>Veg</option>
+              <option>Nonveg</option>
             </select>
           </Col>
           <Col>
