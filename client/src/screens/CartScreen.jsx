@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { FaMinusCircle, FaPlusCircle, FaTrash } from "react-icons/fa";
@@ -75,7 +75,7 @@ const CartScreen = () => {
             <h1>Payment Info</h1>
             <h4>Sub Total </h4>
             <h4>RS : {subTotal} /-</h4>
-            <Checkout subTotal={subTotal} />
+            {subTotal > 0 ? <Checkout subTotal={subTotal}/> : null}
           </Col>
         </Row>
       </Container>

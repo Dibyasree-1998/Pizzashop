@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import StripeCheckout from "react-stripe-checkout";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,12 +15,14 @@ const Checkout = ({ subTotal }) => {
     dispatch(placeOrder(token, subTotal));
     console.log(token);
   };
-  if (success) dispatch(emptyCart());
+  useEffect(()=> {
+if(success) dispatch(emptyCart());
+  },[success])
   return (
     <>
       {loading && <Loader />}
       {error && <Error error="something went wrong" />}
-      {success && <Success success="order placed success" /> }
+      {success && <Success success="order placed successfully" /> }
       <StripeCheckout
         amount={subTotal * 100}
         shippingAddress

@@ -64,7 +64,7 @@ export const filterPizza = (searchkey, category) => async (dispatch) => {
     );
     if (category !== "all") {
       filterdPizza = res.data.filter(
-        (pizza) => pizza.category.toLowerCase() === category
+        (pizza) => pizza.category.toLowerCase() === category.toLowerCase()
       );
     }
     dispatch({ type: "GET_PIZZAS_SUCCESS", payload: filterdPizza });
